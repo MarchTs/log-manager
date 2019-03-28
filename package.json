@@ -1,0 +1,21 @@
+{
+    "name": "@march_ts/log-manager",
+    "version": "1.0.0",
+    "description": "log manager",
+    "main": "log-manager.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "log",
+        "manager"
+    ],
+    "author": "Thanapat Saisoontornwattana",
+    "license": "ISC",
+    "dependencies": {
+        "http-options": "^1.0.1",
+        "http-requests": "^1.0.2",
+        "mssql": "^5.0.3",
+        "log-manager": "file:../LogManager"
+    }
+}

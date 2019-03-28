@@ -15,7 +15,6 @@
     "dependencies": {
         "http-options": "^1.0.1",
         "http-requests": "^1.0.2",
-        "mssql": "^5.0.3",
-        "log-manager": "file:../LogManager"
+        "mssql": "^5.0.3"
     }
 }

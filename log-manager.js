@@ -1,6 +1,6 @@
 const httpRequest = require("@march_ts/http-request");
 const HttpOption = require("@march_ts/http-option");
-const config = require("@march_ts/build-variance");
+const config = require("@march_ts/build-variant");
 
 module.exports.insert3Party = async (
     url = new URL(),

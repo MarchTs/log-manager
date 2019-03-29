@@ -1,6 +1,6 @@
-const httpRequest = require("http-requests");
-const HttpOption = require("http-options");
-const config = require("build-variance");
+const httpRequest = require("@march_ts/http-request");
+const HttpOption = require("@march_ts/http-option");
+const config = require("@march_ts/build-variance");
 
 module.exports.insert3Party = async (
     url = new URL(),
@@ -25,12 +25,12 @@ module.exports.insert3Party = async (
             new HttpOption("POST"),
             body
         ).catch(reason => {
-            console.log("log error catch:", reason.message);
+            // console.log("log error catch:", reason.message);
         });
     } catch (reason) {
-        console.log("log error try:", reason.message);
+        // console.log("log error try:", reason.message);
     }
-    // console.log("log success:", result);
+    // console.log("log success:", config.LOG_THIRD_PARTY_INSERT);
 };
 
 module.exports.insertInfo = async (
@@ -50,12 +50,18 @@ module.exports.insertInfo = async (
 
     // console.log("log body:", body);
     let logUrl = new URL(config.LOG_INFO_INSERT);
-    let result = await httpRequest(logUrl, new HttpOption("POST"), body).catch(
-        reason => {
-            // console.log("log error:", reason.message);
-        }
-    );
-    // console.log("log success:", result);
+    try {
+        let result = await httpRequest(
+            logUrl,
+            new HttpOption("POST"),
+            body
+        ).catch(reason => {
+            // console.log("log error catch:", reason.message);
+        });
+    } catch (reason) {
+        // console.log("log error try:", reason.message);
+    }
+    // console.log("log success:", config.LOG_INFO_INSERT);
 };
 
 module.exports.insertDBLog = async (
@@ -75,10 +81,16 @@ module.exports.insertDBLog = async (
     };
 
     let logUrl = new URL(config.LOG_DB_INSERT);
-    let result = await httpRequest(logUrl, new HttpOption("POST"), body).catch(
-        reason => {
-            // console.log("log error:", reason.message);
-        }
-    );
-    // console.log("log success:", result);
+    try {
+        let result = await httpRequest(
+            logUrl,
+            new HttpOption("POST"),
+            body
+        ).catch(reason => {
+            // console.log("log error catch:", reason.message);
+        });
+    } catch (reason) {
+        // console.log("log error try:", reason.message);
+    }
+    // console.log("log success:", config.LOG_DB_INSERT);
 };

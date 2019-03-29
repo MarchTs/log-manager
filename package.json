@@ -1,6 +1,6 @@
 {
     "name": "@march_ts/log-manager",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "log manager",
     "main": "log-manager.js",
     "scripts": {
@@ -13,7 +13,7 @@
     "author": "Thanapat Saisoontornwattana",
     "license": "ISC",
     "dependencies": {
-        "@march_ts/build-variant": "^1.0.2",
+        "@march_ts/build-variant": "^1.0.3",
         "@march_ts/http-option": "^1.0.1",
         "@march_ts/http-request": "^1.0.5",
         "mssql": "^5.0.3"

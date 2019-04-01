@@ -25,12 +25,15 @@ module.exports.insert3Party = async (
             new HttpOption("POST"),
             body
         ).catch(reason => {
-            // console.log("log error catch:", reason.message);
+            let isEnable = config.enable_log_display || true;
+            if (isEnable)
+                console.log("log error catch:", config.LOG_THIRD_PARTY_INSERT);
         });
     } catch (reason) {
         // console.log("log error try:", reason.message);
     }
-    // console.log("log success:", config.LOG_THIRD_PARTY_INSERT);
+    let isEnable = config.enable_log_display || true;
+    if (isEnable) console.log("log success:", config.LOG_THIRD_PARTY_INSERT);
 };
 
 module.exports.insertInfo = async (
@@ -56,12 +59,15 @@ module.exports.insertInfo = async (
             new HttpOption("POST"),
             body
         ).catch(reason => {
-            // console.log("log error catch:", reason.message);
+            let isEnable = config.enable_log_display || true;
+            if (isEnable)
+                console.log("log error catch:", config.LOG_INFO_INSERT);
         });
     } catch (reason) {
         // console.log("log error try:", reason.message);
     }
-    // console.log("log success:", config.LOG_INFO_INSERT);
+    let isEnable = config.enable_log_display || true;
+    if (isEnable) console.log("log success:", config.LOG_INFO_INSERT);
 };
 
 module.exports.insertDBLog = async (
@@ -87,10 +93,12 @@ module.exports.insertDBLog = async (
             new HttpOption("POST"),
             body
         ).catch(reason => {
-            // console.log("log error catch:", reason.message);
+            let isEnable = config.enable_log_display || true;
+            if (isEnable) console.log("log error catch:", config.LOG_DB_INSERT);
         });
     } catch (reason) {
         // console.log("log error try:", reason.message);
     }
-    // console.log("log success:", config.LOG_DB_INSERT);
+    let isEnable = config.enable_log_display || true;
+    if (isEnable) console.log("log success:", config.LOG_DB_INSERT);
 };
